@@ -1,6 +1,6 @@
 import java.io.File
 
-val input = readFile("data/day2.txt").trim()
+val input = readFile("data/day2.txt")
 
 println("part 1")
 
