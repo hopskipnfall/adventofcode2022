@@ -5,7 +5,7 @@ val input = readFile("data/day1.txt")
 println("part 1")
 
 println(
-  input.split("\n\n").map { it.split("\n").mapNotNull { it.toIntOrNull() }.sum() }.maxOrNull()
+  input.split("\n\n").map { it.split("\n").map { it.toInt() }.sum() }.maxOrNull()
 )
 
 println("part 2")
@@ -13,7 +13,7 @@ println("part 2")
 println(
   input
     .split("\n\n")
-    .map { it.split("\n").mapNotNull { it.toIntOrNull() }.sum() }
+    .map { it.split("\n").map { it.toInt() }.sum() }
     .asSequence()
     .sortedDescending()
     .take(3)
