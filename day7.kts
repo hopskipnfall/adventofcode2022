@@ -8,7 +8,6 @@ data class FileSummary(val name: String, val fileSize: Int)
 println("part 1")
 
 val directoryToFiles = mutableMapOf<String, MutableList<FileSummary>>()
-
 val currentDirPath = mutableListOf("")
 
 input
@@ -54,13 +53,11 @@ val directoryToTotalFileSize =
       .values
       .sumOf { filesInDir -> filesInDir.sumOf { it.fileSize } }
   }
-
 println(directoryToTotalFileSize.values.filter { it <= 100000 }.sum())
 
 println("part 2")
 
 val needToFreeUp = -(70000000 - directoryToTotalFileSize[""]!! - 30000000)
-
 println(directoryToTotalFileSize.values.filter { it >= needToFreeUp }.minOf { it })
 
 fun readFile(path: String): String = File(path).bufferedReader().use { it.readText() }
